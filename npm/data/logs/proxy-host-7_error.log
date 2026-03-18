@@ -1,0 +1,1 @@
+2026/03/18 19:53:40 [warn] 482#482: *2601 an upstream response is buffered to a temporary file /var/cache/nginx/proxy_temp/9/74/0000000749 while reading upstream, client: 10.1.0.1, server: portainer.jsemolik.dev, request: "GET /api/motd HTTP/1.1", upstream: "https://10.1.0.20:9443/api/motd", host: "portainer.jsemolik.dev", referrer: "https://portainer.jsemolik.dev/"
