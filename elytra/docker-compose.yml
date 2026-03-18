@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   elytra:
     image: ghcr.io/pyrohost/elytra:latest
@@ -10,8 +9,8 @@ services:
     environment:
       # Required: Panel connection and token
       ELYTRA_PANEL_LOCATION: "https://ptero.jsemolik.dev"
-      ELYTRA_TOKEN_ID: "pJjeWUbwwJfvXwen"
-      ELYTRA_TOKEN: "nJyPIbFlVLsKjFQRvFspyXgPWG5CsVbpIHHmqiElLF28erhHGFMuNH22RrLIVbum"
+      ELYTRA_TOKEN_ID: "blablabla"
+      ELYTRA_TOKEN: "blablabla"
 
       # Optional overrides / useful defaults
       TZ: "UTC"
@@ -28,15 +27,16 @@ services:
 
       # Docker integration (required for managing containers)
       ELYTRA_DOCKER_TMPFS_SIZE: "100"
-      # Disable rustic backups in container mode unless you have the 'rustic' binary available
       ELYTRA_SYSTEM_BACKUPS_RUSTIC_LOCAL_ENABLED: "false"
 
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "/var/lib/docker/containers/:/var/lib/docker/containers/:ro"
-      - "./data:/var/lib/elytra"
-      - "./logs:/var/log/elytra"
-      - "./data/config.yml:/etc/elytra/config.yml"
+      - "/var/run/docker.sock:/var/run/docker.sock:rw"
+      - "/var/lib/docker/containers/:/var/lib/docker/containers/:rw"
+      - "/var/lib/elytra:/var/lib/elytra"
+      - "/var/log/elytra:/var/log/elytra"
+      - "/var/lib/elytra/config.yml:/etc/elytra/config.yml"
+      - "/tmp/elytra:/tmp/elytra"
+
 
 networks:
   default:
